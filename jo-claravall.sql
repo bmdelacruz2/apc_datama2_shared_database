@@ -1,3 +1,5 @@
+CREATE SCHEMA bmdelacruz2;
+
 CREATE TABLE bmdelacruz2.presidents (
     id serial CONSTRAINT presidents_pk PRIMARY KEY,
     fname varchar(45) NOT NULL,
@@ -133,6 +135,7 @@ CREATE TABLE bmdelacruz2.warehouses (
     warehouse_type_id int NOT NULL,
     location varchar(255) NOT NULL,
     FOREIGN KEY (company_id) REFERENCES bmdelacruz2.companies (id),
+    FOREIGN KEY (warehouse_type_id) REFERENCES bmdelacruz2.warehouse_types (id),
     UNIQUE (location)
 );
 
